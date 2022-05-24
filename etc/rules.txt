@@ -1,0 +1,5 @@
+NOT IS hello_world.txt
+#CONTAIN_ONE 
+#CONTAIN_ALL 
+NOT END .conf .exe
+REGEX [\w_.]*
