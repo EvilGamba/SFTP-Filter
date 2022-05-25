@@ -1,1 +1,1 @@
-python yara_compile.py
+python3 yara_compile.py
