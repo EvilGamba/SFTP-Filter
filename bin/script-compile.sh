@@ -1,1 +1,1 @@
-python compile.py
+python3 compile.py
