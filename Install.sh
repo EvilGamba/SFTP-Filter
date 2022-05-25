@@ -1,6 +1,8 @@
 apt isntall -y
 apt install openssh-server
 apt install inotify-tools
+apt install python3-pip
+pip install yara-python
 systemctl enable ssh
 systemctl start ssh
 groupadd sftp
