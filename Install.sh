@@ -14,7 +14,7 @@ mkdir /bin/SFTP-Filter
 cp bin/* /bin/SFTP-Filter
 cp etc/* /etc/SFTP-Filter
 
-cp service/FileMon.sh /bin/SFTP-Filter
+cp service/SysMon.sh /bin/SFTP-Filter
 cp service/uploadfilter.service /etc/systemd/system
 
 chmod +x /bin/SFTP-Filter/SysMon.sh
