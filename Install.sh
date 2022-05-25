@@ -1,5 +1,6 @@
 apt isntall -y
 apt install openssh-server
+apt install inotify-tools
 systemctl enable ssh
 systemctl start ssh
 groupadd sftp
