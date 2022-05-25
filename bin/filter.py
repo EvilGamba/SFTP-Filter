@@ -7,8 +7,8 @@ def main():
     log = open(r"/etc/SFTP-Filter/history.log", 'a')
     filename = sys.argv[1]
     
-    if not os.path.exists(filename):
-        log.write("ERROR:  {0} Does not exist in current context\n".format(filename))
+    if not os.path.isfile(filename):
+        log.write("ERROR:  {0} is not a file Or Does not Exist\n".format(filename))
         sys.exit("File Does Not Exist")
     
     namer = namelib()
