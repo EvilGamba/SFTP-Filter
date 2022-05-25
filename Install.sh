@@ -21,6 +21,6 @@ chmod +x /bin/SFTP-Filter/SysMon.sh
 systemctl enable uploadfilter.service
 
 
-echo export PATH=PATH:/bin/SFTP-Filter >> ~/.bashrc
+echo export PATH=$PATH:/bin/SFTP-Filter >> ~/.bashrc
 
 reboot now
