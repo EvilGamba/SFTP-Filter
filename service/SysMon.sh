@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGET_PATH="/server/chroot"
+TARGET_PATH="/home"
 
 
 while true; do
