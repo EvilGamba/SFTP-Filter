@@ -1,2 +1,5 @@
 [Service]
 ExecStart=/bin/SFTP-Filter/SysMon.sh
+
+[Install]
+WantedBy=multi-user.target
