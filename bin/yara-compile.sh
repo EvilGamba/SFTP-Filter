@@ -1,1 +1,1 @@
-python3 yara_compile.py
+python3 /bin/SFTP-Filter/yara_compile.py
