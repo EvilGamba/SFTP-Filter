@@ -20,7 +20,7 @@ cp etc/* /etc/SFTP-Filter
 cp service/SysMon.sh /bin/SFTP-Filter
 cp service/uploadfilter.service /etc/systemd/system
 
-chmod +x /bin/SFTP-Filter/SysMon.sh
+chmod 700 /bin/SFTP-Filter/*
 systemctl enable uploadfilter.service
 
 
