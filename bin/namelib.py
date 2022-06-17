@@ -6,12 +6,13 @@ class namelib():
     def __init__(self):
         NAMERULES = r"/etc/SFTP-Filter/rules.txt"
         self.__rules = self.__reader(NAMERULES)
+    
     def __reader(self, path : str):
         rules = []
         rulefile = open(path, 'r')
         for line in rulefile.readlines():
             flag = False
-            words = line[:-1].split(' ')
+            words = line.strip('\n').split(' ')
             if words[0] == "NOT":
                 flag = True
                 words = words[1::]
@@ -21,13 +22,12 @@ class namelib():
 
     def scan(self, subject: str) -> bool:
         # returns true if the filename fit all of the rules in the NAMERULES file
-        subject = subject.split('/')[-1]
         for cmd, args, flag in self.__rules:
             if not self.__commander(cmd, args, subject, flag):
                 return False
         return True
 
-    def __commander(self, cmd: str, args: str, subject: str, flag: bool) -> bool:
+    def __commander(self, cmd: str, args, subject: str, flag: bool) -> bool:
         if flag:
             # For the Not Command
             return not self.__commander(cmd, args, subject, False)
@@ -42,11 +42,12 @@ class namelib():
         if cmd == "REGEX":
             return self.__string_regex(subject, args)
         # else: ignore line
+        return True
 
     def __string_contain_one(self, subject, args):
         # If contains one of the arguments return true
         for arg in args:
-            if re.search(subject, arg):
+            if arg in subject:
                 return True
         return False
 
@@ -55,7 +56,6 @@ class namelib():
         print (args)
         for arg in args:
             if arg not in subject:
-                print (arg)
                 return False
         return True
 
@@ -78,3 +78,7 @@ class namelib():
         if re.search(pattern, subject):
             return True
         return False
+
+    def print_rules(self):
+        for rule in self.__rules:
+            print(rule)
