@@ -9,6 +9,7 @@ class guard():
     def scan(self, path) -> bool:
         matches = self.__rules.match(path)
         if len(matches) > 0:
+            print(matches)
             return False
         return True
         
