@@ -4,7 +4,7 @@ import json
 class guard():
     __rules = None
     def __init__(self) -> None:
-        self.__rules = yara.load(r"opt/Filtered-SFTP/Compiled_Rules")
+        self.__rules = yara.load(r"opt/SFTP-Filter/Compiled_Rules")
         
     def scan(self, path) -> bool:
         matches = self.__rules.match(path)
