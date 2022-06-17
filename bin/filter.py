@@ -21,7 +21,7 @@ def main():
     log.write("INFO: {0} : Passed Name Check\n".format(filename))
     
     sentry = guard()
-    if not (sentry.scan(filename)):
+    if not (sentry.scan(dir+filename)):
         log.write("INFO: {0} : Did Not Pass Security Check\n".format(filename))
         os.remove(filename)
         log.write("INFO: {0} : Deleted from Server\n".format(filename))
@@ -30,7 +30,7 @@ def main():
 
     tinkerer = scripter()
     log.write("INFO: {0} : Goes Through Scripts\n".format(filename))
-    tinkerer.run_scripts(filename)
+    tinkerer.run_scripts(dir+filename)
 
 
 
