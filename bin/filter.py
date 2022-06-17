@@ -5,9 +5,10 @@ import sys , os , logging
 
 def main():
     log = open(r"/etc/SFTP-Filter/history.log", 'a')
-    filename = sys.argv[1]
+    filename = sys.argv[2]
+    dir = sys.argv[1]
     
-    if not os.path.isfile(filename):
+    if not os.path.isfile(dir+filename):
         log.write("ERROR:  {0} is not a file Or Does not Exist\n".format(filename))
         sys.exit("File Does Not Exist")
     
